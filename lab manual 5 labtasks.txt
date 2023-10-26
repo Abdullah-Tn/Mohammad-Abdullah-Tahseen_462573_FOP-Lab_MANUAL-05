@@ -1,0 +1,162 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main(){
+	cout<<"TASK 1:-"<<endl;
+	int x=1; 
+	
+	do{
+		cout<<"Enter a number: ";
+		cin>>x; 
+	}while(x>0);
+	
+	cout<<"TASK2:-"<<endl;
+	char ch; 
+	double num1, num2; 
+	int operation, choice, choice1, choice2, choice3;
+	do{
+		cout<<"Enter the numbers num1 and num2 respectively"<<endl; 
+		cin>>num1;
+		cin>>num2;
+		cout<<"Choose the operation\n";
+		cout<<"1. Addition\n"; 
+		cout<<"2. Subtraction\n"; 
+		cout<<"3. Division\n"; 
+		cout<<"4. Multiplication\n"; 
+		cout<<"5. Power\n"; 
+		cout<<"6. Modulus\n";
+		cout<<" \n";
+		cin>>operation;
+		switch(operation){
+		case 1: 
+		{cout << num1 << "+" << num2 <<" = " << num1+num2 <<endl;
+		break;}
+		
+		case 2: 
+		{
+			cout<<"1. num1 - num2\n"; 
+			cout<<"2. num2 - num1\n"; 
+			cout<<"Select the operation\n";
+			cin>>choice; 
+			switch(choice) {
+			case 1: 
+			{cout << num1 <<"-"<< num2 <<" = " << num1 - num2<<endl;
+			break;}
+			case 2: 
+			{cout<< num2 <<"-"<< num1 <<" = "<< num2 - num1<< endl;
+			break;}
+			default: {cout<<"INVALID CHOICE"<<endl;}    }
+			break;
+	}
+		case 3: 
+		{
+			cout<<"Select the division operation\n";
+			cout<<"1. num1/num2\n";
+			cout<<"2. num2/num1\n";
+			cin>>choice1;
+			switch(choice1){
+		
+			case 1:
+				{cout<<num1<<"/"<<num2<< " = " <<num1/num2<<endl;
+				break;} 
+			case 2: 
+			    {cout<<num2<<"/"<<num1<<" = "<< num2/num1<<endl;
+				break;} 
+			default: {cout<<"INVALID CHOICE"<<endl;}	}	
+			break;
+		}
+		
+		case 4: 
+		{
+			cout<<num1<<" x "<< num2<< " = "<< num1*num2<<endl;
+			break; }
+			
+		case 5: 
+		{
+			cout<<"Select the power operation\n"; 
+			cout<<"1. pow(num1, num2)\n";
+			cout<<"2. pow(num2, num1)\n"; 
+			cin>>choice2;
+			switch(choice2){
+			case 1:
+				{cout<<num1<<"^"<<num2<<" = "<<pow(num1, num2)<<endl;
+				break;}
+				
+			case 2:
+				{cout<<num2<<"^"<<num1<<" = "<<pow(num2, num1)<<endl;
+				break;}	
+				
+			default: {cout<<"INVALID CHOICE"<<endl;} 
+			}break;
+		}
+	    case 6: 
+	    {
+	    	cout<<"Select the modulus operation\n";
+	    	cout<<"1. fmod(double num1, double num2)\n"; 
+	    	cout<<"2. fmod(double num2, double num1)\n"; 
+	    	cin>>choice3; 
+	    	switch(choice3){
+	    	case 1:
+	    		{cout<<num1<<" % "<<num2<<" = "<<fmod(num1, num2)<<endl; 
+			break;	}
+			case 2:
+				{cout<<num2<<" % "<<num1<<" = "<<fmod(num2, num1)<<endl;
+			break;	}
+			default: {cout<<"INVALID CHOICE"<<endl;}	
+		}
+		break;
+		}
+		default: {cout<<"INVALID CHOICE"<<endl;}	
+	}
+	
+		cout<<"Do you want to continue and carry out another operation? To continue with another operation, please enter y or Y"<<endl; 
+		cin>>ch; 
+
+	} while (ch == 'y' || ch == 'Y');
+	
+	
+	//end of task2 
+	
+	cout<<"TASK 3:- Partt A) "<<endl; 
+	int a = 2, sum=0;
+	do 
+	{
+	sum = sum+(a);
+		a+=2; 
+	} while (a<=100);
+	cout<<sum<<endl;
+	
+	cout<<"TASK 3:- Part B) "<<endl; 
+	int b=1, sum1=0; 
+	do 
+	{
+		sum1 = b*b+sum1; 
+		b++; 
+	} while (b<=100); 
+	cout<<sum1<<endl; 
+	
+	cout<<"TASK 4:- Part A) "<<endl;
+	int i=0;
+	do{
+		pow(2, i);
+		cout<<pow(2, i)<<" ";
+		i++;
+	} while(i<=20);
+	cout<<" "<<endl;
+    cout<<"TASK 4:- Part B) "<<endl;
+    int A, B, SUM=0, NUM1; 
+    cout<<"Please enter the two odd numbers between which you want to calculate the sum"<<endl; 
+    cin>>A;
+    cin>>B;
+    NUM1 = A; 
+    while (A<=B){
+    	
+    	if(A%2 == 1)
+    	{SUM = A + SUM;}
+        A++; 
+	}
+	cout<<"The sum of all odd numbers between "<< NUM1 << " and " << B << " is:-\n";
+	cout<<SUM;
+	return 0;
+	
+}
