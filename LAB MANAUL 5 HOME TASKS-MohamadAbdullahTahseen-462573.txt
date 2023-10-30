@@ -1,0 +1,123 @@
+/*
+Mohammad Abdullah Tahseen 462573
+ME-15 Sec-A
+Lab Manual 5 hometasks
+*/
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main(){
+	
+	cout<<"TASK 1:- Finding LCM using HCF of two numbers"<<endl; 
+	//Write a C++ program to find LCM of a number using the hcf
+	int num1, num2, i, HCF, LCM;
+	cout<<"Please enter the numbers\n"; //Enter the numbers whose hcf and lcm is to be found
+	cin>>num1; 
+	cin>>num2;
+	i=num1; 
+	//first finding HCF using while loop
+	while(i>0)
+	{
+	/*number moves from greatest possible factor down to lowest possible common factor (2), the first factor within this 
+    range which is common fullfills the following if condition and gets displayed and stored as variable "HCF"
+	*/
+		if(num1%i==0 && num2%i==0)  
+		{HCF = i;  
+		cout<<"The HCF  of the two numbers is: "<<HCF<<endl;
+		break;}
+		
+		i--; 
+	}
+	//Using fomrula that relates HCF and lCM of a number; num1*num2 = HCF*LCM
+    LCM  = (num1*num2)/HCF;
+    cout<<"The LCM of the numbers is: "<<LCM<<endl;
+//END OF TASK1 
+
+
+    cout<<"TASK 2:- Finding sum of arithematic progression"<<endl; 
+//Write a C++ program to find the sum of the arithematic progression series
+    int a1, d, n1=1, n, sum=0; 
+/*Requesting user to enter the first term, the constant difference and 
+number of terms in the arithematic progression*/
+    cout<<"Please enter the first term of your arithematic progression\n"; 
+    cin>>a1; 
+    cout<<"Please enter the constant difference d of your arithematic progression\n"; 
+    cin>>d; 
+    cout<<"How many terms do you want the arithematic progression to go upto?\n";
+    cin>>n; 
+/*using a while loop to prgressively add the difference d into the first term and 
+at the same time progressively add these terms into variable sum(the sum of AP series)*/
+    while(n1<=n)
+    { 
+	    sum = a1 + sum;
+	    a1 = a1 + d; 
+	    n1++; 
+	}
+//As n1 becomes equal to n (entered number of terms), the loop stops and sum is displayed
+	cout<<"The sum of the arithematic progression is = "<<sum<<endl;
+//END OF TASK2
+    
+    cout<<"TASK 3:- Creating a diamond"<<endl;
+    //Write a C++ program creating a diamond shape using sterics as shown; 
+    /*   *
+        ***
+       *****
+      *******
+     *********    for this given shape, user has to put m=5 
+      *******
+       *****
+        ***
+         *
+    */
+    int m; 
+    cout<<"Please enter the number of rows in the upper half of your diamond\n";
+    cin>>m; 
+    //first set of for loop and nested for loops for the upper half of diamond having m rows
+    for(int i=1; i<=m; i++){       //used to control number of rows
+    	 	
+        for(int j=m-i; j>=0; j--) //used to display spaces
+        {cout<<" "; }
+        
+        for(int j=1; j<=2*i-1; j++) //used to display sterics
+        {cout<<"*";         
+		}
+	cout<<endl; 
+	}
+	//2nd set of for loop and nested for loops for the lower half of diamond having (m-1) rows 
+	for(int i=m-1; i>0; i--){
+		
+		for(int j= m-i; j>=0; j--)
+		{cout<<" ";}
+		
+		for(int j =1; j<=2*i-1; j++)
+		{cout<<"*";
+		}
+	cout<<endl; 
+	}
+    //END OF TASK3 
+    
+    cout<<"TASK 4:- Conversion of decimal into binary"<<endl; 
+    //Write a C++ program  converting decimal numbers into binary
+    int y, p, binary=0, i1=1;  
+    cout<<"Please enter your number in decimal;"<<endl; 
+    cin>>y; 
+    cout<<"Your number in binary is;\n"; 
+/*while loop in order to find remainder of the given decimal number when divided by 2 and progressively
+reducing the number down to 1 by dividing by 2*/
+    while (y>=1)
+    {
+    	p = y%2; 
+    	y=y/2;
+    	binary = binary + p*i1;
+        //Each remainder recieved is placed as a digit in the binary number
+    	i1= i1*10;
+    	/*The first remainder in the units place, 2nd in tens place and so on..
+    	upto a point where number is reduced down to 1*/
+	}
+/*the obtained arrangement of 0s and 1s by the above loop as the number gets reduced down to 1
+is the binary form of the decimal number*/
+    cout<<binary; 
+    //END OF TASK4
+    
+return 0; 
+}
